@@ -36,19 +36,19 @@ test('Out For Repo', async ({ page }) => {
   console.log('Checking column sorting...');
   
   // Unit column
-  await page.locator('.secOutForRepoOrInAgg #tblDeviceRepoOrInAggReport th:has-text("Unit")').click();
+  await page.locator('.secOutForRepoOrInAgg .dataTables_scrollHead table th:has-text("Unit")').click();
   await page.waitForTimeout(2000);
-  await page.locator('.secOutForRepoOrInAgg #tblDeviceRepoOrInAggReport th:has-text("Unit")').click();
+  await page.locator('.secOutForRepoOrInAgg .dataTables_scrollHead table th:has-text("Unit")').click();
   await page.waitForTimeout(2000);
 
   // Last Activity column
-  await page.locator('.secOutForRepoOrInAgg #tblDeviceRepoOrInAggReport th:has-text("Last Activity")').click();
+  await page.locator('.secOutForRepoOrInAgg .dataTables_scrollHead table th:has-text("Last Activity")').click();
   await page.waitForTimeout(2000);
-  await page.locator('.secOutForRepoOrInAgg #tblDeviceRepoOrInAggReport th:has-text("Last Activity")').click();
+  await page.locator('.secOutForRepoOrInAgg .dataTables_scrollHead table th:has-text("Last Activity")').click();
   await page.waitForTimeout(2000);
   
   // Location column
-  const mostRecent = page.locator('#tblDeviceRepoOrInAggReport th')
+  const mostRecent = page.locator('.secOutForRepoOrInAgg .dataTables_scrollHead table th')
   .filter({ hasText: /^Location$/ });
   await mostRecent.first().click();
   await page.waitForTimeout(2000);
